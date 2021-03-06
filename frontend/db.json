@@ -1,0 +1,58 @@
+{
+    "posts": [
+        {
+            "id": 1,
+            "title": "json-server",
+            "author": "typicode"
+        }
+    ],
+    "comments": [
+        {
+            "id": 1,
+            "body": "some comment",
+            "postId": 1
+        }
+    ],
+    "profile": {
+        "name": "typicode"
+    },
+    "todo": [
+        {
+            "id": 1,
+            "text": "Estudar React"
+        },
+        {
+            "id": 2,
+            "text": "Estudar Node"
+        },
+        {
+            "id": 3,
+            "text": "Revisar conceito do Axios"
+        },
+        {
+            "id": 4,
+            "text": "Integrar o frontend com o backend"
+        },
+        {
+            "id": 5,
+            "text": "Tratar endpoints"
+        }
+    ],
+    "user": [
+        {
+            "id": 1,
+            "email": "aitor@gmail.com",
+            "password": "aitor123"
+        },
+        {
+            "id": 2,
+            "email": "gabriel@gmail.com",
+            "password": "gabriel123"
+        },
+        {
+            "id": 3,
+            "email": "guilherme@gmail.com",
+            "password": "guilherme123"
+        }
+    ]
+}
