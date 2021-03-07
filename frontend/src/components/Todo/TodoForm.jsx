@@ -10,10 +10,14 @@ const TodoForm = ({ todoInput, setTodoInput, todos, setTodos }) => {
             text: todoInput,
         }
 
-        await axios.post("/todo", data);
+        if(data.text.length === 0 || data.text.trim() === 0) {
+            alert("O campo deve estar preenchido.")
+        } else {
+            await axios.post("/todo", data);
 
-        setTodos([...todos, data]);
-        setTodoInput("");
+            setTodos([...todos, data]);
+            setTodoInput("");
+        }
     }
 
     return (

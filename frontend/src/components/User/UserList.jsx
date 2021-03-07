@@ -1,5 +1,5 @@
 
-const UserList = ({ userHeaderTitle, id, email, password, action, users }) => {
+const UserList = ({ userHeaderTitle, users, columns }) => {
     return (
         <div className="user-list">
             <div className="user-header">
@@ -9,16 +9,16 @@ const UserList = ({ userHeaderTitle, id, email, password, action, users }) => {
                 <table className="user-table">
                     <thead className="user-table-thead">
                         <tr>
-                            <th>{ id }</th>
-                            <th>{ email }</th>
-                            <th>{ password }</th>
-                            <th>{ action }</th>
+                            {columns.map((column) => (
+                              <th key={column.id}>{column.value}</th>
+                            ))}
                         </tr>
                     </thead>
                     <tbody>
                         {users.map((user) => (
                             <tr>
                                 <td>{ user.id }</td>
+                                <td>{ user.name }</td>
                                 <td>{ user.email }</td>
                                 <td>{ user.password }</td>
                                 <td>
