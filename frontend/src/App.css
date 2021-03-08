@@ -206,3 +206,69 @@ body {
 .footer-content-span {
     font-weight: 700;
 }
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 90px;
+    margin-left: 530px;
+    margin-right: 530px;
+    padding: 50px 0;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: 5px;
+    background-color: #F7F7F7;
+}
+
+.login-form-input input {
+    width: 300px;
+    outline: none;
+    padding: 2px 0;
+}
+
+.login-form-button button {
+    width: 300px;
+    color: #FFFFFF;
+    background-color: dodgerblue;
+    border: none;
+    padding: 6px 0;
+    border-radius: 3px;
+}
+
+.login-form-link a {
+    text-decoration: none;
+}
+
+.register-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    margin-left: 530px;
+    margin-right: 530px;
+    padding: 50px 0;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: 5px;
+    background-color: #F7F7F7;
+}
+
+.register-form-input input {
+    width: 300px;
+    outline: none;
+    padding: 2px 0;
+}
+
+.register-form-button button {
+    width: 300px;
+    color: #FFFFFF;
+    background-color: dodgerblue;
+    border: none;
+    padding: 6px 0;
+    border-radius: 3px;
+}
+
+.register-form-link a {
+    text-decoration: none;
+}
