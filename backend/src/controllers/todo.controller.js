@@ -3,11 +3,12 @@ const TodoModel = require("../models/todo.model");
 class TodoController {
 
     async create(req, res) {
-        const data = req.body;
+        const { body: data, headers: { loggedUser: { _id: userId } } } = req
         
-        const todo = await TodoModel.create(data);
+        data.userId = userId;
 
-        res.send({ todo });
+        const todo = await TodoModel.create(data);
+        res.send({ data: todo })
     }
 
     async getOne(req, res) {
@@ -27,9 +28,11 @@ class TodoController {
     }
 
     async getAll(req, res) {
-        const todos = await TodoModel.find();
+        const { headers: { loggedUser: { _id: userId }, } } = req;
 
-        res.send({ todos });
+        const todos = await TodoModel.find({ userId });
+
+        res.send({ todos: todos });
     }
 
     async update(req, res) {

@@ -1,11 +1,11 @@
-const { verify } = require("jsonwebtoken");
+const jwt = require("jsonwebtoken");
 
-const publicRoutes = ["/", "/api/auth"];
+const publicRoutes = ["/api/user", "/api/user/auth"];
 
 const authMiddleware = (req, res, next) => {
     const { authorization } = req.headers;
 
-    if(publicRoutes.includes(req.url) || req.method === "POST") {
+    if(publicRoutes.includes(req.url)) {
         return next();
     }
 
@@ -16,7 +16,7 @@ const authMiddleware = (req, res, next) => {
         }
 
         const [_, token] = authorization.split(" ");
-        const payload = verify(token, process.env.JWT_SECRET_KEY);
+        const payload = jwt.verify(token, process.env.JWT_SECRET_KEY);
 
         req.headers.loggedUser = payload;
 
